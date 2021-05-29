@@ -5,20 +5,10 @@ using UnityEngine;
 public class BossWeapon : MonoBehaviour
 {
     public Transform firePoint;
-    public GameObject bulletPrefab;
-    public int frames = 0;
-    void Update()
+    public GameObject[] bulletPrefab;
+    public float shoot = 0;
+    void Shoot(int i)
     {
-        frames++;
-        if(frames >= 120)
-        {
-            Shoot();
-            frames = 0;
-        }
-    }
-
-    void Shoot()
-    {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Instantiate(bulletPrefab[i], firePoint.position, firePoint.rotation);
     }
 }

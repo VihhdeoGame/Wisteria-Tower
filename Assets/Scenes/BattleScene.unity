@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 449438535}
   - component: {fileID: 449438534}
   - component: {fileID: 449438536}
+  - component: {fileID: 449438537}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -215,7 +216,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449438530}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6b2aec00c3417541870940f796566ae, type: 3}
   m_Name: 
@@ -277,9 +278,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 682487707}
-  bulletPrefab: {fileID: 3379831618095552150, guid: 6e258b5bcdae35b4abd3d1bdbc0811d6,
-    type: 3}
-  frames: 0
+  bulletPrefab:
+  - {fileID: 6375523798961301458, guid: dd2ec9561e1fd674dbdee0e7d93f2b13, type: 3}
+  - {fileID: 3379831618095552150, guid: 6e258b5bcdae35b4abd3d1bdbc0811d6, type: 3}
+  - {fileID: 2874220388531626585, guid: f5aaf648888c7254bbf8804ca8c8bebb, type: 3}
+  shoot: 0
+--- !u!95 &449438537
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449438530}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ad80da3d360d9a49b8987e31bdbe1c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &682487706
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1064626501}
+  - component: {fileID: 1064626502}
   m_Layer: 0
   m_Name: PlayerMovePoint
   m_TagString: Untagged
@@ -481,6 +504,19 @@ Transform:
   m_Father: {fileID: 1969359946}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1064626502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064626500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0fc9c428679364788b9a435fdb8515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 1064626501}
 --- !u!1 &1088371164
 GameObject:
   m_ObjectHideFlags: 0

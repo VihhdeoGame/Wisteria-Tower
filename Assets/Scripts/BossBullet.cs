@@ -5,13 +5,17 @@ using UnityEngine;
 public class BossBullet : MonoBehaviour
 {
     public bool unblockable;
+    public bool follow;
     public float speed;
+    public MovePoint PlayerMp;
     public Rigidbody2D rb;
     public int bulletDamage = 100;
 
     void Start()
     {
-        rb.velocity = transform.up * -speed;
+        PlayerMp = FindObjectOfType<MovePoint>();
+        if(!follow)
+            rb.velocity = transform.up * -speed;
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo) 
@@ -33,6 +37,8 @@ public class BossBullet : MonoBehaviour
     }
     private void Update()
     {
+        if(follow)
+            transform.position = Vector3.MoveTowards(transform.position, PlayerMp.t.position, speed*Time.deltaTime);            
         if(transform.position.y <= -10)
         {
             Destroy(gameObject);
